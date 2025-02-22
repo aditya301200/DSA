@@ -31,7 +31,7 @@ Submissions making more than `100` calls to `MountainArray.get` will be judged W
 
 ### Example 3:
 
-> **Input**: mountainArr = [1,5,2], target = 1  
+> **Input**: mountainArr = [1,5,2], target = 2  
 **Output**: 2  
 **Explanation**: 2 exists in the array, at index=2. so we return -1.
 
