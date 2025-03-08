@@ -13,32 +13,32 @@ public class Code {
         System.out.println(search(arr,target));
     }
     public static boolean search(int[] arr, int target) {
-        int low = 0;
-        int high = arr.length-1;
-        while(low<=high){
-            int mid = (low+high)/2;
+        int start = 0;
+        int end = arr.length-1;
+        while(start<=end){
+            int mid = start + (end-start)/2;
             if(arr[mid] == target){
                 return true;
             }
-            if(arr[low]==arr[mid] && arr[mid]==arr[high]){
-                low++;
-                high--;
+            if(arr[start]==arr[mid] && arr[mid]==arr[end]){
+                start++;
+                end--;
                 continue;
             }
             // left sorted
-            if(arr[low]<=arr[mid]){
-                if(arr[low]<=target && target <= arr[mid]){
-                    high = mid-1;
+            if(arr[start]<=arr[mid]){
+                if(arr[start]<=target && target <= arr[mid]){
+                    end = mid-1;
                 } else{
-                    low = mid+1;
+                    start = mid+1;
                 }
             }
             // right sorted
             else{
-                if(arr[mid]<=target && target <= arr[high]){
-                    low = mid+1;
+                if(arr[mid]<=target && target <= arr[end]){
+                    start = mid+1;
                 } else{
-                    high = mid-1;
+                    end = mid-1;
                 }
             }
         }
